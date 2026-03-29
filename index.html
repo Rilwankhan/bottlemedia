@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bottle Media</title>
+    <link rel="icon" type="image/png" href="Bottle Media Logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER / NAVIGATION -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <a href="index.html#home" class="logo">
+                        <img class="logo-img" src="Bottle Media Logo.png" alt="Bottle Media">
+                        <span class="logo-text">Bottle Media</span>
+                    </a>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="nav-menu">
+                    <a href="index.html#home" class="nav-link active" data-section="home">Home</a>
+                    
+                    <!-- Services Dropdown -->
+                    <div class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-section="services">
+                            Our Services <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="website-development.html" class="dropdown-item">
+                                <i class="fas fa-code"></i> Website Development
+                            </a>
+                            <a href="digital-marketing.html" class="dropdown-item">
+                                <i class="fas fa-chart-bar"></i> Digital Marketing
+                            </a>
+                            <a href="personal-branding.html" class="dropdown-item">
+                                <i class="fas fa-palette"></i> Personal Branding
+                            </a>
+                            <a href="chatbot.html" class="dropdown-item">
+                                <i class="fas fa-robot"></i> Chat Bots
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <a href="index.html#achievements" class="nav-link" data-section="achievements">Achievements</a>
+                </nav>
+
+                <!-- Contact Button & Hamburger -->
+                <div class="nav-right">
+                    <button class="contact-btn" id="contactBtn">Contact Us</button>
+                    <button class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTACT MODAL -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Get In Touch</h2>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/xykbeelz" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email ID</label>
+                    <input type="email" id="email" name="email" placeholder="bottle@media.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" placeholder="City, Country" required>
+                </div>
+                <div class="form-group">
+                    <label for="reason">Reason for Contact</label>
+                    <select id="reason" name="reason" required>
+                        <option value="">Select a reason</option>
+                        <option value="inquiry">General Inquiry</option>
+                        <option value="website">Website Development</option>
+                        <option value="marketing">Digital Marketing</option>
+                        <option value="branding">Branding Services</option>
+                        <option value="support">Support</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+            <div class="form-message" id="formMessage"></div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="hero-logo-wrapper">
+                <div class="hero-logo" id="heroLogo">
+                        <img src="Bottle Media Logo.png" alt="bottle media logo">
+                    </div>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title">Creative Digital Solutions</h1>
+                <p class="hero-subtitle">Transform Your Vision Into Reality With Our Expertise</p>
+                <button class="cta-btn" onclick="document.getElementById('contactBtn').click()">
+                    Start Your Journey
+                </button>
+            </div>
+        </section>
+
+        <!-- HERO SERVICE IMAGES -->
+        <section class="hero-services-preview">
+            <div class="container">
+                <div class="hsp-grid">
+                    <div class="hsp-card">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80" alt="Website Development">
+                        <div class="hsp-overlay">
+                            <i class="fas fa-code"></i>
+                            <span>Website Development</span>
+                        </div>
+                    </div>
+                    <div class="hsp-card">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Digital Marketing">
+                        <div class="hsp-overlay">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Digital Marketing</span>
+                        </div>
+                    </div>
+                    <div class="hsp-card">
+                        <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&q=80" alt="Chatbot Development">
+                        <div class="hsp-overlay">
+                            <i class="fas fa-robot"></i>
+                            <span>Chatbot Development</span>
+                        </div>
+                    </div>
+                    <div class="hsp-card">
+                        <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80" alt="Personal Branding">
+                        <div class="hsp-overlay">
+                            <i class="fas fa-palette"></i>
+                            <span>Personal Branding</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW WE WORK HUB — links to per-service process pages -->
+        <section class="how-we-work hww-hub" id="how-we-work">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How We Work</h2>
+                    <div class="header-line"></div>
+                    <p class="hww-hub-lead">Each service has its own step-by-step process. Open a page to see how we deliver from discovery to launch.</p>
+                </div>
+                <div class="hww-hub-grid">
+                    <a href="website-development.html" class="hww-hub-card">
+                        <div class="hww-hub-icon"><i class="fas fa-code"></i></div>
+                        <h3>Website Development</h3>
+                        <p>UI/UX, responsive build, performance, and secure deployment.</p>
+                        <span class="hww-hub-cta">View process <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="digital-marketing.html" class="hww-hub-card">
+                        <div class="hww-hub-icon"><i class="fas fa-chart-bar"></i></div>
+                        <h3>Digital Marketing</h3>
+                        <p>Audit, strategy, multi-channel campaigns, and optimisation.</p>
+                        <span class="hww-hub-cta">View process <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="chatbot.html" class="hww-hub-card">
+                        <div class="hww-hub-icon"><i class="fas fa-robot"></i></div>
+                        <h3>Chatbot</h3>
+                        <p>Conversation design, AI training, integrations, and iteration.</p>
+                        <span class="hww-hub-cta">View process <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="personal-branding.html" class="hww-hub-card">
+                        <div class="hww-hub-icon"><i class="fas fa-palette"></i></div>
+                        <h3>Personal Branding</h3>
+                        <p>Positioning, visual identity, presence, and thought leadership.</p>
+                        <span class="hww-hub-cta">View process <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Meet Our Visionary</h2>
+                    <div class="header-line"></div>
+                </div>
+                <div class="about-content">
+                    <div class="about-image">
+                        <div class="image-wrapper">
+                            <img src="Karan sir.png" alt="CEO">
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <h3>Karan</h3>
+                        <p class="position">Founder & CEO</p>
+                        <p class="bio">I’m Karan S, founder of Bottle Media.
+
+I help traditional businesses turn their offline presence into a consistent flow of customer inquiries using simple, result-driven digital systems.
+
+No vanity metrics only real outcomes like leads, footfall, and conversions.
+
+At Bottle Media, we focus on what actually works of clear content, local reach, and direct response strategies that drive revenue.</p>
+                        <div class="about-highlights">
+                            <div class="highlight">
+                                <span class="number">5+</span>
+                                <span class="label">Years Experience</span>
+                            </div>
+                            <div class="highlight">
+                                <span class="number">10+</span>
+                                <span class="label">Projects Done</span>
+                            </div>
+                            <div class="highlight">
+                                <span class="number">98%</span>
+                                <span class="label">Client Satisfaction</span>
+                            </div>
+                        </div>
+                        <p class="bio-extended"><b>Vision:</b> To become the most trusted growth partner for traditional businesses by helping them successfully transition from offline dependency to strong, result-driven digital systems.<br><b>Mission:</b> To help 100+ local businesses and institutes to  generate consistent leads and customers using simple, effective digital strategies without confusion, complexity, or wasted budgets.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Services</h2>
+                    <div class="header-line"></div>
+                </div>
+
+                <!-- Service Cards -->
+                <div class="services-grid">
+                    <!-- Web Development -->
+                    <div class="service-card" data-service="web-development">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Website Development</h3>
+                        <p>Creating stunning, responsive websites that drive results and engage your audience.</p>
+                        <div class="service-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Responsive Design</li>
+                                <li><i class="fas fa-check"></i> Fast Performance</li>
+                                <li><i class="fas fa-check"></i> SEO Optimized</li>
+                                <li><i class="fas fa-check"></i> Modern Technologies</li>
+                            </ul>
+                        </div>
+                        <div class="service-benefits">
+                            <h4>Benefits:</h4>
+                            <p>Increase online visibility, improve user engagement, boost conversions, and establish strong digital presence.</p>
+                        </div>
+                        <a href="website-development.html" class="service-btn">Learn More</a>
+                    </div>
+
+                    <!-- Digital Marketing -->
+                    <div class="service-card" data-service="digital-marketing">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Digital Marketing</h3>
+                        <p>Strategic marketing solutions to grow your business and reach your target audience.</p>
+                        <div class="service-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> SEO Strategy</li>
+                                <li><i class="fas fa-check"></i> Social Media Management</li>
+                                <li><i class="fas fa-check"></i> Content Marketing</li>
+                                <li><i class="fas fa-check"></i> Analytics & Reporting</li>
+                            </ul>
+                        </div>
+                        <div class="service-benefits">
+                            <h4>Benefits:</h4>
+                            <p>Higher website traffic, qualified leads, brand awareness, improved ROI, and sustainable growth.</p>
+                        </div>
+                        <a href="digital-marketing.html" class="service-btn">Learn More</a>
+                    </div>
+
+                    <!-- Personal Branding -->
+                    <div class="service-card" data-service="branding">
+                        <div class="service-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Personal Branding</h3>
+                        <p>Build a powerful personal brand that stands out and opens new opportunities.</p>
+                        <div class="service-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Brand Strategy</li>
+                                <li><i class="fas fa-check"></i> Visual Identity</li>
+                                <li><i class="fas fa-check"></i> Portfolio Development</li>
+                                <li><i class="fas fa-check"></i> Online Presence</li>
+                            </ul>
+                        </div>
+                        <div class="service-benefits">
+                            <h4>Benefits:</h4>
+                            <p>Establish authority, attract opportunities, build trust, command premium rates, and create lasting impact.</p>
+                        </div>
+                        <a href="personal-branding.html" class="service-btn">Learn More</a>
+                    </div>
+
+                    <!-- Chat Bots -->
+                    <div class="service-card" data-service="chatbots">
+                        <div class="service-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Chat Bots</h3>
+                        <p>AI-powered chatbots that automate customer support and improve engagement 24/7.</p>
+                        <div class="service-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> AI Integration</li>
+                                <li><i class="fas fa-check"></i> Instant Support</li>
+                                <li><i class="fas fa-check"></i> Lead Qualification</li>
+                                <li><i class="fas fa-check"></i> Analytics Tracking</li>
+                            </ul>
+                        </div>
+                        <div class="service-benefits">
+                            <h4>Benefits:</h4>
+                            <p>24/7 customer support, reduce support costs, faster response time, better customer experience, and more sales.</p>
+                        </div>
+                        <a href="chatbot.html" class="service-btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE US SECTION -->
+        <section class="why-choose" id="why-choose">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Choose Us</h2>
+                    <div class="header-line"></div>
+                </div>
+                <div class="why-choose-grid">
+                    <div class="why-card">
+                        <div class="why-number">01</div>
+                        <i class="fas fa-star"></i>
+                        <h3>Proven Track Record</h3>
+                        <p>500+ successful projects completed with 98% client satisfaction rate.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-number">02</div>
+                        <i class="fas fa-bolt"></i>
+                        <h3>Expert Team</h3>
+                        <p>Talented professionals with years of experience in their respective fields.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-number">03</div>
+                        <i class="fas fa-rocket"></i>
+                        <h3>Innovative Solutions</h3>
+                        <p>Cutting-edge technology and creative approach to every project.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-number">04</div>
+                        <i class="fas fa-handshake"></i>
+                        <h3>Customer Support</h3>
+                        <p>Dedicated support team available 24/7 for your needs.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-number">05</div>
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Transparent Pricing</h3>
+                        <p>Clear, competitive pricing with no hidden costs.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-number">06</div>
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Quality Assurance</h3>
+                        <p>Rigorous testing and quality checks on every deliverable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR PROCESS SECTION -->
+        <section class="process" id="process">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Process</h2>
+                    <div class="header-line"></div>
+                </div>
+                <div class="process-timeline">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Discovery & Planning</h3>
+                        <p>We understand your needs, goals, and target audience to create a strategic plan.</p>
+                    </div>
+                    <div class="process-connector"></div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Design & Prototyping</h3>
+                        <p>Creating beautiful, user-friendly designs and interactive prototypes.</p>
+                    </div>
+                    <div class="process-connector"></div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Development</h3>
+                        <p>Building robust, scalable solutions using modern technologies.</p>
+                    </div>
+                    <div class="process-connector"></div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>Testing & Launch</h3>
+                        <p>Comprehensive testing and smooth deployment for optimal performance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENTS SECTION -->
+        <section class="achievements" id="achievements">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Achievements</h2>
+                    <div class="header-line"></div>
+                </div>
+                <div class="carousel-wrapper">
+                    <button class="carousel-btn prev" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="achievements-carousel">
+                        <div class="carousel-item">
+                            <div class="achievement-card">
+                                <img src="https://i.pinimg.com/1200x/71/be/03/71be031e3f32c644642f9d1c61e5f883.jpg" alt="Innovation Award">
+                                <h3>Innovation Award</h3>
+                                <p>Best Digital Solutions Provider 2023</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="achievement-card">
+                                <img src="https://cdn.pixabay.com/photo/2015/11/19/21/10/laptop-1052010_1280.jpg" alt="Projects Completed">
+                                <h3>500+ Projects</h3>
+                                <p>Successfully Delivered Worldwide</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="achievement-card">
+                                <img src="https://cdn.pixabay.com/photo/2018/03/22/10/55/appstore-3250516_1280.jpg" alt="Premium Quality">
+                                <h3>Premium Quality</h3>
+                                <p>Industry Leading Standards</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="achievement-card">
+                                <img src="https://cdn.pixabay.com/photo/2014/07/30/13/58/world-map-403395_1280.jpg" alt="Global Presence">
+                                <h3>Global Presence</h3>
+                                <p>Serving 50+ Countries</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR CLIENTS SECTION -->
+        <section class="clients" id="clients">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Clients</h2>
+                    <div class="header-line"></div>
+                </div>
+                <div class="clients-grid">
+                    <div class="client-logo">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100" height="100" fill="#0F3D3E" opacity="0.1"/>
+                            <text x="50" y="60" font-size="32" fill="#D4AF37" text-anchor="middle" font-family="Poppins" font-weight="bold">Client</text>
+                        </svg>
+                    </div>
+                    <div class="client-logo">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100" height="100" fill="#0F3D3E" opacity="0.1"/>
+                            <text x="50" y="60" font-size="32" fill="#D4AF37" text-anchor="middle" font-family="Poppins" font-weight="bold">Brand</text>
+                        </svg>
+                    </div>
+                    <div class="client-logo">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100" height="100" fill="#0F3D3E" opacity="0.1"/>
+                            <text x="50" y="60" font-size="32" fill="#D4AF37" text-anchor="middle" font-family="Poppins" font-weight="bold">Corp</text>
+                        </svg>
+                    </div>
+                    <div class="client-logo">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100" height="100" fill="#0F3D3E" opacity="0.1"/>
+                            <text x="50" y="60" font-size="32" fill="#D4AF37" text-anchor="middle" font-family="Poppins" font-weight="bold">Tech</text>
+                        </svg>
+                    </div>
+                    <div class="client-logo">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100" height="100" fill="#0F3D3E" opacity="0.1"/>
+                            <text x="50" y="60" font-size="32" fill="#D4AF37" text-anchor="middle" font-family="Poppins" font-weight="bold">Start</text>
+                        </svg>
+                    </div>
+                    <div class="client-logo">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100" height="100" fill="#0F3D3E" opacity="0.1"/>
+                            <text x="50" y="60" font-size="32" fill="#D4AF37" text-anchor="middle" font-family="Poppins" font-weight="bold">Innov</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Client Testimonials</h2>
+                    <div class="header-line"></div>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Bottle Media transformed our online presence. Their team is professional, creative, and results-driven. Highly recommended!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop" alt="Alex Rodriguez">
+                            </div>
+                            <div>
+                                <h4>Alex Rodriguez</h4>
+                                <p>Founder, Tech Ventures</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Exceptional service and attention to detail. They took our vision and made it reality. Worth every penny!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop" alt="Sarah Martinez">
+                            </div>
+                            <div>
+                                <h4>Sarah Martinez</h4>
+                                <p>CEO, Digital Solutions Inc</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Outstanding team! They delivered ahead of schedule and the quality was beyond our expectations. Definitely recommending!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop" alt="Michael Park">
+                            </div>
+                            <div>
+                                <h4>Michael Park</h4>
+                                <p>Entrepreneur, Park Ventures</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Bottle Media</h3>
+                    <p>Premium digital solutions for modern businesses.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#achievements">Achievements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Bottle Media, All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
