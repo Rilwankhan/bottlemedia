@@ -1578,6 +1578,82 @@ section {
     text-align: center;
     opacity: 0.8;
 }
+/* Footer Section */
+.footer-section {
+    width: 100%;
+}
+
+/* Gold Heading */
+.footer-heading {
+    color: #d4af37;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* List */
+.contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Each Item */
+.contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    flex-wrap: wrap; /* important for mobile */
+}
+
+/* Icons */
+.contact-info i {
+    color: #d4af37;
+    font-size: 16px;
+    min-width: 20px;
+}
+
+/* Links */
+.contact-info a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: 0.3s;
+    word-break: break-word; /* prevents overflow */
+}
+
+.contact-info a:hover {
+    color: #d4af37;
+}
+
+/* 🔽 Mobile Responsive */
+@media (max-width: 768px) {
+    .footer-heading {
+        font-size: 16px;
+    }
+
+    .contact-info li {
+        font-size: 13px;
+        gap: 10px;
+    }
+
+    .contact-info i {
+        font-size: 14px;
+    }
+}
+
+/* 🔽 Small Mobile */
+@media (max-width: 480px) {
+    .contact-info li {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .contact-info a {
+        font-size: 13px;
+    }
+}
 
 /* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 992px) {
