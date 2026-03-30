@@ -2,6 +2,17 @@
    ADVANCED PREMIUM COMPANY WEBSITE
    Style.css - Complete Styling & Animations
    ======================================== */
+.logo_style
+{
+    display: none;
+}
+#bottlemedia
+{
+    width: 30%;
+    border-radius: 50%;
+    margin-left: 37%;
+    margin-top: 10%;
+}
 
 /* ========== CSS VARIABLES ==========  */
 :root {
