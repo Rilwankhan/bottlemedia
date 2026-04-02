@@ -8,6 +8,81 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+// 🔒 Disable Right Click
+document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+});
+
+// 🔒 Disable Key Shortcuts
+document.onkeydown = function (e) {
+    // Disable F12
+    if (e.keyCode == 123) return false;
+
+    // Disable Ctrl+Shift+I (Inspect)
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false;
+
+    // Disable Ctrl+Shift+J (Console)
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 74) return false;
+
+    // Disable Ctrl+U (View Source)
+    if (e.ctrlKey && e.keyCode == 85) return false;
+
+    // Disable Ctrl+S (Save Page)
+    if (e.ctrlKey && e.keyCode == 83) return false;
+};
+
+// 🔒 Disable Copy, Cut, Paste, Select
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("cut", e => e.preventDefault());
+document.addEventListener("paste", e => e.preventDefault());
+document.addEventListener("selectstart", e => e.preventDefault());
+
+// 🔒 Disable Drag & Drop
+document.addEventListener("dragstart", e => e.preventDefault());
+
+// 🔒 Disable Image Right Click Individually
+document.querySelectorAll("img").forEach(img => {
+    img.setAttribute("draggable", "false");
+});
+
+// 🔒 DevTools Detection (basic)
+(function () {
+    function detectDevTools() {
+        const widthThreshold = window.outerWidth - window.innerWidth > 160;
+        const heightThreshold = window.outerHeight - window.innerHeight > 160;
+
+        if (widthThreshold || heightThreshold) {
+            document.body.innerHTML = "<h1 style='text-align:center;margin-top:20%;font-family:sans-serif;'>⚠️ Developer Tools Detected</h1>";
+        }
+    }
+
+    setInterval(detectDevTools, 1000);
+})();
+
+// 🔒 Debugger Trap (annoying trick)
+setInterval(function () {
+    debugger;
+}, 2000);
+
+</script>
+
+<style>
+/* 🔒 Disable text selection */
+body {
+    user-select: none;
+}
+
+/* 🔒 Disable image interaction */
+img {
+    pointer-events: none;
+}
+
+/* 🔒 Optional: blur screen when trying to inspect */
+body.inspect-block {
+    filter: blur(10px);
+}
+</style>
 </head>
 <body>
     <header class="header">
