@@ -5,6 +5,7 @@
 .logo_style
 {
     display: none;
+    align-content: center;
 }
 #bottlemedia
 {
@@ -1340,6 +1341,7 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
@@ -1389,6 +1391,11 @@ section {
 @media (max-width: 768px) {
   .slide img {
     height: 250px;
+  }
+  .carousel{    
+    width: 110%;
+    height: 200px;
+    margin-left: -15px;
   }
 
   .nav {
@@ -1521,6 +1528,13 @@ section {
     font-weight: 600;
 }
 
+.loca
+{
+    margin-left: 33px;
+    margin-top: -33px;
+    margin-right: -33px;
+}
+
 /* List */
 .contact-info {
     list-style: none;
@@ -1582,6 +1596,12 @@ section {
 
     .contact-info a {
         font-size: 13px;
+    }
+        .loca {
+        margin-left: 0px;
+        margin-top: -3px;
+        margin-right: -33px;
+        max-width: 100%;
     }
 }
 
@@ -1840,7 +1860,7 @@ section {
 
 @media (max-width: 480px) {
     .container {
-        padding-left: 15px;
+        padding-left: 30px;
     }
     section {
         padding: 40px 16px;
